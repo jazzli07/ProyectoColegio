@@ -3,9 +3,9 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname+'/dist/colegiocebe-app'));
+app.use(express.static(__dirname+'/dist/colegio-cebe-frontend'));
 app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/dist/colegiocebe-app/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/colegio-cebe-frontend/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
