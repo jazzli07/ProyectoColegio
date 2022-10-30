@@ -70,7 +70,7 @@ export class HorariosComponent implements OnInit {
           },
           error: (e) => {
             console.error(e);
-            alert('Hubo un erro al eliminar el registro.');
+            alert('Hubo un error al eliminar el registro.');
           }
         });
   
