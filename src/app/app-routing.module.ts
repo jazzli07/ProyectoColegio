@@ -20,6 +20,9 @@ import { AgregarAlumnoComponent } from './components/administradores/alumnos/agr
 import { AgregarAulaComponent } from './components/administradores/aulas/agregar-aula/agregar-aula.component';
 import { EditarAulaComponent } from './components/administradores/aulas/editar-aula/editar-aula.component';
 import { CursosAulaComponent } from './components/administradores/aulas/cursos-aula/cursos-aula.component';
+import { AgregarHorariosComponent } from './components/administradores/horarios/agregar-horarios/agregar-horarios.component';
+import { EditarHorariosComponent } from './components/administradores/horarios/editar-horarios/editar-horarios.component';
+import { HorariosComponent } from './components/administradores/horarios/horarios.component';
 
 const routes: Routes = [
 
@@ -48,9 +51,13 @@ const routes: Routes = [
       { path: 'aulas', component: AulasComponent },
       { path: 'agregar-aula', component: AgregarAulaComponent },
       { path: 'editar-aula/:id', component: EditarAulaComponent },
-      { path: 'cursos-aula/:id', component: CursosAulaComponent }
+      { path: 'cursos-aula/:id', component: CursosAulaComponent },
 
-
+       //CRUD horarios
+      { path: 'horarios', component: AulasComponent },
+      { path: 'agregar-horarios', component: AgregarHorariosComponent },
+      { path: 'editar-horarios/:id', component: EditarHorariosComponent },
+      { path: 'cursos-horarios/:id', component: HorariosComponent }
       
     ]
   }
