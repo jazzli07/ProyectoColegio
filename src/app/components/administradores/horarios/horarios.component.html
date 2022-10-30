@@ -1,0 +1,92 @@
+<div class="contenedor">
+    <div class="encabezado">
+        <div>
+            <h1>📚 <strong>HORARIOS</strong></h1>
+        </div>
+        <div>
+            <button mat-raised-button type="button" class="btn btn-success" routerLink="/menu-admins/agregar-horario">
+                <mat-icon>note_add</mat-icon>
+                <span>Agregar</span>
+            </button>
+        </div>
+    </div>
+    <!-- <hr class="solid"> -->
+    <div class="contenido">
+        <table class="table table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col" style="text-align: center;">Opciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let horario of horarios">
+                    <td style="color:black"><strong>{{horario.id_horario}}</strong></td>
+                    <td>{{horario.inicio_fin}}</td>
+                    <div class="btn-opciones">
+                        <!-- Al leer cada elemento se setea el id al routerLink para que se pueda editar un elemento especifico cuando es clickeado -->
+                        <button type="button" class="btn btn-outline-warning" routerLink="/menu-admins/editar-curso/{{horario.id_horario}}">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <!-- Al leer cada elemento se setea el id al metodo para que pueda ser eliminado -->
+                        <button type="button" class="btn btn-outline-danger" (click)="confirmDelete(askEliminar, horario.id_horario)">
+                            <mat-icon >delete_outline</mat-icon>
+                        </button>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
+</div>
+
+<!-- VENTANA MODAL CONFIRMAR ELIMINAR -->
+<ng-template #askEliminar let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <mat-icon>
+                warning
+            </mat-icon>
+            ¡ATENCIÓN!</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        ¿Realmente deseas eliminar el registro?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.close()">
+            NO
+        </button>
+        <button type="button" class="btn btn-danger" (click)="delete(mensajeError)">
+            SÍ
+        </button>
+    </div>
+</ng-template>
+
+<!-- VENTANA MODAL MENSAJE DE ERROR -->
+<ng-template #mensajeError let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <mat-icon>
+                error
+            </mat-icon>
+            Error!
+        </h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        No se ha podido realizar la operacion. Es posible que otros datos dependan de este registro.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close()">
+            OK
+        </button>
+    </div>
+</ng-template>
+

@@ -1,0 +1,84 @@
+<h1>📚 <strong>EDITANDO DATOS DEL HORARIO</strong></h1>
+<hr>
+<div class="submit-form">
+    <form>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Inicio Fin del Horario</span>
+            <input class="form-control" type="text" aria-label="Nombre"
+                aria-describedby="basic-addon1" name="nombre" id="inicio_fin" required autocomplete="off"
+                [value]="currentHorario.inicio_fin" [(ngModel)]="currentHorario.inicio_fin">
+        </div>
+
+
+        <div class="btnOpciones">
+            <button type="button" class="btn btn-warning" routerLink="/menu-admins/horarios">Regresar</button>
+            <button type="button" class="btn btn-primary" (click)="updateHorario(mensajeExito, mensajeError, mensajeDatosFaltantes)">Actualizar</button>
+        </div>
+    </form>
+</div>
+
+<!-- VENTANA MODAL MENSAJE EXITOSO -->
+<ng-template #mensajeExito let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <mat-icon>
+                check_circle
+            </mat-icon>
+            ¡Enhorabuena!</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Los datos se han actualizado correctamente.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="modal.close()" routerLink="/menu-admins/horarios">
+            OK
+        </button>
+    </div>
+</ng-template>
+
+<!-- VENTANA MODAL DATOS FALTANTES -->
+<ng-template #mensajeDatosFaltantes let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <mat-icon>
+                warning
+            </mat-icon>
+            ¡DATOS FALTANTES!</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Asegurate de ingresar todos los datos
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-warning" (click)="modal.close()">
+            OK
+        </button>
+    </div>
+</ng-template>
+
+<!-- VENTANA MODAL DATOS FALTANTES -->
+<ng-template #mensajeError let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <mat-icon>
+                error
+            </mat-icon>
+            Error!</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Se ha producido un error al actualizar los datos.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close()">
+            OK
+        </button>
+    </div>
+</ng-template>

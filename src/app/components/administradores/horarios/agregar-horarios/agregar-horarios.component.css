@@ -1,0 +1,17 @@
+.btnOpciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btnOpciones > button{
+    margin: 12px;
+}
+
+h1{
+    color: rgb(65, 64, 64);
+}
+.input-group-text{
+    width: 112px;
+    justify-content: center;
+}
