@@ -54,10 +54,9 @@ const routes: Routes = [
       { path: 'cursos-aula/:id', component: CursosAulaComponent },
 
        //CRUD horarios
-      { path: 'horarios', component: AulasComponent },
+      { path: 'horarios', component: HorariosComponent },
       { path: 'agregar-horarios', component: AgregarHorariosComponent },
       { path: 'editar-horarios/:id', component: EditarHorariosComponent },
-      { path: 'cursos-horarios/:id', component: HorariosComponent }
       
     ]
   }
