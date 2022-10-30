@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 //Insertar datos del modelo correspondiente
 import { Cursos } from '../models/cursos.model';
 //Insertar endpoint correspondiente
-const baseUrl = 'http://localhost:3000/cursos';
+const baseUrl = 'https://colegiocebe-postgress.herokuapp.com/cursos';
 
 @Injectable({
   providedIn: 'root'
