@@ -16,8 +16,7 @@
             <thead class="table-light">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripcion</th>
+                    <th scope="col">Inicio y Final de Horario</th>
                     <th scope="col" style="text-align: center;">Opciones</th>
                 </tr>
             </thead>
@@ -27,7 +26,7 @@
                     <td>{{horario.inicio_fin}}</td>
                     <div class="btn-opciones">
                         <!-- Al leer cada elemento se setea el id al routerLink para que se pueda editar un elemento especifico cuando es clickeado -->
-                        <button type="button" class="btn btn-outline-warning" routerLink="/menu-admins/editar-curso/{{horario.id_horario}}">
+                        <button type="button" class="btn btn-outline-warning" routerLink="/menu-admins/editar-horarios/{{horario.id_horario}}">
                             <mat-icon>edit</mat-icon>
                         </button>
                         <!-- Al leer cada elemento se setea el id al metodo para que pueda ser eliminado -->
