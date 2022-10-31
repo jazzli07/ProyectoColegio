@@ -1,0 +1,35 @@
+.contenedor{
+    max-height: calc(100vh - 100px);
+    margin: 16px;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 2rem; */
+    color: rgb(42, 42, 42);
+    border-radius: 12px;
+}
+
+.contenido{
+    margin-top: 24px;
+    width: max-content;
+    max-width: 80vw;
+    max-height: 70vh;
+    overflow: scroll;
+}
+
+.encabezado{
+    display: flex;
+    flex-direction: row;
+}
+
+.encabezado > div{
+    margin-right: 24px;
+}
+
+.btn-opciones > button{
+    margin-right: 8px;
+    height: auto;
+    width: auto;
+}
