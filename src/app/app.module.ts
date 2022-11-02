@@ -24,7 +24,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
 //heroku path errror refresh
-import { PathLocationStrategy, LocationStrategy } from '@angular/common';
+// import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 
 //componentes generados por us
 import { MenuAdminsComponent } from './components/administradores/menu-admins/menu-admins.component';
@@ -82,7 +82,8 @@ import { HorariosComponent } from './components/administradores/horarios/horario
     MatDividerModule,
     NgbModule
   ],
-  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
+  // providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
