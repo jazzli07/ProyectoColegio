@@ -25,9 +25,8 @@ import { EditarHorariosComponent } from './components/administradores/horarios/e
 import { HorariosComponent } from './components/administradores/horarios/horarios.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home'},
-  { path: 'home', component: HomeComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '/home', component: HomeComponent },
   { path: 'opciones', component: OpcionesComponent },
   { path: 'login-admins', component: LoginAdminsComponent },
   { path: 'login-docentes', component: LoginDocentesComponent },
@@ -63,7 +62,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
