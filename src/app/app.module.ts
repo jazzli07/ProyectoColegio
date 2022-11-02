@@ -23,6 +23,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
+//heroku path errror refresh
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 //componentes generados por us
 import { MenuAdminsComponent } from './components/administradores/menu-admins/menu-admins.component';
 import { AulasComponent } from './components/administradores/aulas/aulas.component';
@@ -41,6 +44,7 @@ import { CursosAulaComponent } from './components/administradores/aulas/cursos-a
 import { AgregarHorariosComponent } from './components/administradores/horarios/agregar-horarios/agregar-horarios.component';
 import { EditarHorariosComponent } from './components/administradores/horarios/editar-horarios/editar-horarios.component';
 import { HorariosComponent } from './components/administradores/horarios/horarios.component';
+import { hasClassName } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 
 
@@ -79,7 +83,7 @@ import { HorariosComponent } from './components/administradores/horarios/horario
     MatDividerModule,
     NgbModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
