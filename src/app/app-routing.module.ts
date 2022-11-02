@@ -25,6 +25,7 @@ import { EditarHorariosComponent } from './components/administradores/horarios/e
 import { HorariosComponent } from './components/administradores/horarios/horarios.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'opciones', component: OpcionesComponent },
